@@ -1,6 +1,5 @@
 package VectorAlgebra;
 
-import java.util.List;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -15,10 +14,10 @@ public class VectorAlgebra {
     // Declare the Scanner.
     Scanner readUserInput = new Scanner(System.in);
     // Declare the Vectors.
-    private List<Double> a = new Vector<Double>();
-    private List<Double> b = new Vector<Double>();
-    private List<Double> c = new Vector<Double>();
-    private List<Double> d = new Vector<Double>();
+    private Vector<Double> a = new Vector<Double>();
+    private Vector<Double> b = new Vector<Double>();
+    private Vector<Double> c = new Vector<Double>();
+    private Vector<Double> d = new Vector<Double>();
     // Declare the Vector sizes.
     private int vectorASize;
     private int vectorBSize;
@@ -28,22 +27,26 @@ public class VectorAlgebra {
     public void setVectorASize(){
         System.out.println("Define the size of vector A: ");
         vectorASize = readUserInput.nextInt();
+        a.setSize(vectorASize);
     }
     public void setVectorBSize(){
         System.out.println("Define the size of vector B: ");
         vectorBSize = readUserInput.nextInt();
+        b.setSize(vectorBSize);
     }
     public void setVectorCSize(){
         System.out.println("Define the size of vector C: ");
         vectorCSize = readUserInput.nextInt();
+        c.setSize(vectorCSize);
     }
     public void setVectorDSize(){
         System.out.println("Define the size of vector D: ");
         vectorDSize = readUserInput.nextInt();
+        d.setSize(vectorDSize);
     }
-    
     // This defines the Scalar Product^a algorithm.
     public void solveScalar(){
         // TO-DO: define the Scalar Product.
+        
     }
 }
