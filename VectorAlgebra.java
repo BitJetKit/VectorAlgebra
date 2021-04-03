@@ -25,6 +25,8 @@ public class VectorAlgebra {
     private int vectorDSize;
     // Instantiate the Vector content variable.
     private double x;
+    // Declare the scalar product or dot product variable.
+    private double dotProduct = 0.0;
     // These are the accessors.
     public void setVectorASize(){
         System.out.println("Define the size of vector A: ");
@@ -76,6 +78,9 @@ public class VectorAlgebra {
     }
     // This defines the Scalar Product^a algorithm.
     public void solveScalar(){
-        // TO-DO: Solve the dot product.        
+        // This is the base version: of 2 vectors, get the dot product.
+        for(int i = 0; i < vectorASize; i++){
+            dotProduct += (a.get(i) * b.get(i));
+        }                 
     }
 }
