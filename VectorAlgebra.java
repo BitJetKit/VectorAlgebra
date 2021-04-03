@@ -18,11 +18,13 @@ public class VectorAlgebra {
     private Vector<Double> b = new Vector<Double>();
     private Vector<Double> c = new Vector<Double>();
     private Vector<Double> d = new Vector<Double>();
-    // Declare the Vector sizes.
+    // Instantiate the Vector sizes.
     private int vectorASize;
     private int vectorBSize;
     private int vectorCSize;
     private int vectorDSize;
+    // Instantiate the Vector content variable.
+    private double x;
     // These are the accessors.
     public void setVectorASize(){
         System.out.println("Define the size of vector A: ");
@@ -44,9 +46,36 @@ public class VectorAlgebra {
         vectorDSize = readUserInput.nextInt();
         d.setSize(vectorDSize);
     }
+    public void setVecAContents(){
+        for(int i = 0; i < vectorASize; i++){
+            System.out.println("Enter vector a, variable " + (i + 1));
+            x = readUserInput.nextDouble();
+            a.add(x);
+        }
+    }
+    public void setVecBContents(){
+        for(int i = 0; i < vectorBSize; i++){
+            System.out.println("Enter vector b, variable " + (i + 1));
+            x = readUserInput.nextDouble();
+            b.add(x);
+        }
+    }
+    public void setVecCContents(){
+        for(int i = 0; i < vectorCSize; i++){
+            System.out.println("Enter vector c, variable " + (i + 1));
+            x = readUserInput.nextDouble();
+            c.add(x);
+        }
+    }
+    public void setVecDContents(){
+        for(int i = 0; i < vectorDSize; i++){
+            System.out.println("Enter vector d, variable " + (i + 1));
+            x = readUserInput.nextDouble();
+            d.add(x);
+        }
+    }
     // This defines the Scalar Product^a algorithm.
     public void solveScalar(){
-        // TO-DO: define the Scalar Product.
-        
+        // TO-DO: Solve the dot product.        
     }
 }
