@@ -14,6 +14,7 @@ public class VectorAlgebra {
     // Declare the Scanner.
     Scanner readUserInput = new Scanner(System.in);
     // Declare the Vectors.
+    // TO-DO: To the limit, n, make a user-defined vector count.
     private Vector<Double> a = new Vector<Double>();
     private Vector<Double> b = new Vector<Double>();
     private Vector<Double> c = new Vector<Double>();
@@ -25,8 +26,9 @@ public class VectorAlgebra {
     private int vectorDSize;
     // Instantiate the Vector content variable.
     private double x;
-    // Declare the scalar product or dot product variable.
+    // Declare the solution variables.
     private double dotProduct = 0.0;
+    private Vector<Double> crossProduct = new Vector<Double>();
     // These are the accessors.
     public void setVectorASize(){
         System.out.println("Define the size of vector A: ");
@@ -48,6 +50,7 @@ public class VectorAlgebra {
         vectorDSize = readUserInput.nextInt();
         d.setSize(vectorDSize);
     }
+    // TO-DO: To the limit n vectors, consolidate these vector content adders. 
     public void setVecAContents(){
         for(int i = 0; i < vectorASize; i++){
             System.out.println("Enter vector a, variable " + (i + 1));
@@ -76,11 +79,27 @@ public class VectorAlgebra {
             d.add(x);
         }
     }
+    // TO-DO: Make these compatible with n vectors.
     // This defines the Scalar Product^a algorithm.
     public void solveScalar(){
         // This is the base version: of 2 vectors, get the dot product.
         for(int i = 0; i < vectorASize; i++){
             dotProduct += (a.get(i) * b.get(i));
         }                 
+        System.out.println("Of vectors a and b, the dot product is: " + dotProduct);
+    }
+    // This defines the Cross Product algorithm.
+    public void solveCross(){
+        // This is the base version: of 2 vectors, get the cross product.
+            int i = 0;
+            int j = 0;
+            String crossProductI;
+            String crossProductJ;
+            // Of the cross product, this is the i variable. 
+            crossProduct.add((a.get(i+1) * b.get(b.size() - 1) - a.get(a.size()) * b.get(i + 1)));
+            crossProductI = String.valueOf(crossProduct.get(0)) + "i";
+            // Of the cross product, this is the j variable.
+            crossProduct.add((a.get(i) * b.get(vectorASize)) - a.get(a.size()) * b.get(i));
+            crossProductJ = String.valueOf(crossProduct.get(1)) + "j";
     }
 }
